@@ -1,0 +1,21 @@
+name: "BankingSystem_team2"
+on:
+workflow_dispatch:
+
+jobs:
+  DemoSonarCloudSCan:
+  runs-on: ubuntu-latest
+  steps:
+  uses: actions/checkout@v3
+  width:
+      fetch-depth: 0
+  name: SonarCloud Scan
+  uses: sonarsource/sonarcloud-github-action@master
+  env:
+      GITHUB_TOKEN: ${{secets.GIT_TOKEN}}
+      SONAR_TOKEN: ${{secrets.SONAR_TOKEN}}
+  with:
+     args: >
+     -Dsonar.organization=sha12900
+     -Dsonar.projectkey=BankingSystem_team2
+     
